@@ -1,5 +1,7 @@
 # CoreDev.AI
 
+🔗 **Deployed Link:** [CoreDev.AI](https://coredev-ai-pro-w8rr.vercel.app/)
+
 ## 🚀 Overview
 CoreDev.AI is an AI-powered code generation platform that creates UI code based on user prompts. It leverages the **Gemini API** for intelligent code generation and features a structured **frontend** and **backend** setup, offering an interactive development experience using **WebContainers**.
 
