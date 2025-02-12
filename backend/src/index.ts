@@ -77,7 +77,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:4000",
+      "http://localhost:5174",
       "https://coredev-ai-pro-w8rr.vercel.app",
     ], // List of allowed frontend URLs
     methods: ["GET", "POST", "PUT", "DELETE"],
@@ -112,8 +112,9 @@ app.post("/template", async (req, res) => {
   try {
     var inputPrompt = req.body.prompt;
     var prompt = `Analyze the following project description and determine if it aligns more with a 'node' or 'react' project: ${inputPrompt}. Respond with only one word: 'node' or 'react'.`;
+    console.log(prompt);
     const result = await model.generateContent(prompt);
-    
+    console.log(result);
     // const answer = await result.response.text();
     const answer = await result.response.text().trim();
     console.log(answer);
@@ -148,6 +149,7 @@ app.post(
   async (req, res) => {
     try {
       const messages: { role: string; content: string }[] = req.body.messages;
+      // console.log(messages);
       if (!Array.isArray(messages) || messages.some((msg) => !msg.role || !msg.content)) {
         res.status(400).json({
           message: "Invalid input: 'messages' must be an array of objects with 'role' and 'content' properties.",
@@ -183,8 +185,8 @@ app.post(
   }
 );
 
-app.listen(4000, () => {
-  console.log("Server is running on http://localhost:4000");
+app.listen(3001, () => {
+  console.log("Server is running on http://localhost:3001");
 });
 
 
