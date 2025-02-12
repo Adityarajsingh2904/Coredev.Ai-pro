@@ -92,6 +92,12 @@ function extractAllCodeBlocks(markdown: string): string {
   return matches.map(match => match[1].trim()).join("\n\n");
 }
 
+
+app.get("/", (req,res) => {
+  res.send({
+    message: "Backend Deployed"
+  })
+})
 app.post("/template", async (req, res) => {
   try {
     var inputPrompt = req.body.prompt;
