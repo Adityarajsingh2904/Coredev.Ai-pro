@@ -74,7 +74,13 @@ import { basePrompt as reactBasePrompt } from "./defaults/react";
 
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://coredev-ai-pro-w8rr.vercel.app/", // Change to your frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
