@@ -38,7 +38,7 @@ export function Builder() {
   const [steps, setSteps] = useState<Step[]>([]);
 
   const [files, setFiles] = useState<FileItem[]>([]);
-
+  console.log(prompt);
   useEffect(() => {
     let originalFiles = [...files];
     let updateHappened = false;
@@ -151,9 +151,12 @@ export function Builder() {
   }, [files, webcontainer]);
 
   async function init() {
+    console.log(prompt);
     const response = await axios.post(`${BACKEND_URL}/template`, {
       prompt: prompt.trim()
     });
+
+    console.log(response);
     setTemplateSet(true);
     
     const {prompts, uiPrompts} = response.data;
