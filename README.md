@@ -13,7 +13,7 @@ CoreDev.AI is an AI-powered code generation platform that creates UI code based 
 - **Gemini API** – AI-powered UI code generation
 
 ### **Frontend**
-- **React.js** – UI framework
+- **React.js** – UI framework 
 - **TypeScript** – Type safety
 - **WebContainers** – In-browser runtime
 - **(React Hooks)** – State management
